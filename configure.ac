@@ -29,7 +29,7 @@ AC_MSG_RESULT([setting compute capability of the target device to ${ARCH}])
 
 
 NCFLAGS="-arch=${ARCH} -O2 -DADD_"
-CUDA_INC=${CUDA_HOME}/include
+CUDA_INC=${CUDA_HOME}/include/cuda  # added /cuda suffix for Fedora
 AC_MSG_CHECKING([for CUDA headers])
 AC_CHECK_FILE([${CUDA_INC}/cublas_v2.h],
 	[NCFLAGS="${NCFLAGS} -I${CUDA_INC}"],
